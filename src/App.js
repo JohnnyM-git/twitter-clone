@@ -1,17 +1,17 @@
 import './App.css';
+import Feed from './components/Feed';
 import Sidebar from './components/Sidebar';
+import Widgets from './components/Widgets';
 
 function App() {
   return (
     <div className="app">
-      <h1>Let's build a twitter clone</h1>
-
-      {/* Sidebar */}
       <Sidebar />
-
       {/* Feed */}
+      <Feed />
 
       {/* Widgets */}
+      <Widgets />
       
     </div>
   );

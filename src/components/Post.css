@@ -44,3 +44,7 @@
 .post__avatar {
     padding: 20px;
 }
+.post__header-text {
+    display: flex;
+    justify-content: space-between;
+}

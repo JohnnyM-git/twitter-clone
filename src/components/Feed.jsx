@@ -1,9 +1,10 @@
-import { collection, doc, onSnapshot } from "firebase/firestore";
+import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
 import "./Feed.css";
 import Post from "./Post";
 import TweetBox from "./TweetBox";
+import FlipMove from "react-flip-move";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -18,7 +19,7 @@ function Feed() {
   useEffect(() => {
     onSnapshot(colRef, ({ docs }) => {
         const posts = docs.map((doc) => doc.data());
-      setPosts(posts);
+      setPosts(posts.sort((a, b) => b.timestamp - a.timestamp));
         console.log(posts);
     });
   }, []);
@@ -28,17 +29,21 @@ function Feed() {
         <h2>Home</h2>
       </div>
       <TweetBox />
+      <FlipMove>
       {posts.map((post) => (
         <Post
-          key={post.id}
+        key={post.id}
           displayName={post.displayName}
           username={post.username}
           verified={post.verified}
           text={post.text}
           avatar={post.avatar}
           image={post.image}
+          time={new Date(post.timestamp?.seconds * 1000).toLocaleTimeString()}
         />
       ))}
+        </FlipMove>
+
     </div>
   );
 }

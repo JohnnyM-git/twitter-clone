@@ -19,6 +19,7 @@
     margin-left: 20px;
     font-size: 20px;
     border: none;
+    outline: none;
 }
 
 .tweet-box__tweet-button {
@@ -37,4 +38,5 @@
 .tweet-box__input-image {
     border: none;
     padding: 10px;
+    outline: none;
 }

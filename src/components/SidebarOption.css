@@ -24,3 +24,16 @@
 .sidebar__option--active {
     color: var(--twitter-color);
 }
+
+@media (max-width: 768px) {
+    .sidebar__option > h2 {
+        font-size: 14px;
+        margin-right: 14px;
+    }
+}
+
+@media (max-width: 550px){
+    .sidebar__option > h2 {
+        display: none;
+    } 
+}

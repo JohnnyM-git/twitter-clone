@@ -48,3 +48,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+
+    .post{
+        /* width: 68vw; */
+        margin: 0 auto;
+    }
+    
+    .post img{
+        width: 100%;
+    }
+}

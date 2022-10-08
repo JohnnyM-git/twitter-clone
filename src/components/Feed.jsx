@@ -14,7 +14,7 @@ function Feed() {
     onSnapshot(colRef, ({ docs }) => {
       const posts = docs.map((doc) => doc.data());
       setPosts(posts.sort((a, b) => b.timestamp - a.timestamp));
-      console.log(posts);
+    //   console.log(posts);
     });
   }, []);
   return (
